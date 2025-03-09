@@ -1,0 +1,28 @@
+***Assuming fully setup RPi install, connected on wan and access to internet, fully availble on local network***
+
+#this took a looong time on the pi0
+sudo apt update && sudo apt upgrade -y
+
+sudo apt install libgphoto2-dev gphoto2 -y
+
+pip3 install gphoto2
+
+sudo apt install libzmq3-dev -y
+
+#had to fully complete the first upgrade to get this to work correctly
+pip3 install pyzmq
+
+#this might have to be installed manually.
+pip3 install krpc  
+
+#this is used for detecting night conditions (darkness)
+pip3 install Pillow
+
+#check versions will work
+gphoto2 --version
+python3 -c "import zmq; print(zmq.__version__)"
+python3 -c "import krpc; print(krpc.__version__)"
+python3 -c "import PIL; print(PIL.__version__)"
+
+
+#dont forget to update the LunarPiRover with your correct "Base Station IP address"

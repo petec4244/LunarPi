@@ -1,0 +1,27 @@
+Notes
+
+Working on setting up the PiZero, decided to disable bluetooth, hciart and made it headless through the setup. Currently awaiting the Pi0 to perform it's update and upgrade...why did a choose one of the slowest pi's of all...
+
+Next the plan is to perform the temporary setup of the Canon EOS-6D, capture some images just to make sure that loop is all working..
+It occurs to me that my monitor being curved could become an issue and I might have to use a different one
+
+agghhh...0% [2 base-files 56.1 kB/71.1 kB 79%] [Waiting for headers] [1 raspi-firmware 312 kB/12.8 MB 2%]   5,287 B/s 16h 15min 6s   
+worse than that it seems stuck...it was but I was able to reboot the PI from the keyboard.... Ok turns out the Wan connection dropped for unknown reasons
+
+I had to reboot and it eventually came back up... something worth looking out for in the future, might have to switch to my other wan.
+
+...going to proceed with the update again... seems to be going smoother this time. Turns out the usb hub that i am using with the pi zero allows external power
+seems like it could be why the wan dropped so im gonna dig around where I found this pi zero and see if i can find the tiny tiny barrel connector for the usb power
+otherwise it will likely become an issue when it comes time to capture images. I am going in completely headless so all i need is the camera and wifi dongle
+while these updates are taking place is a perfect time to go looking...
+
+found one that fits hopefully its the correct voltage, as soon as I touched the hub the pi rebooted? So will have to start the update yet again, several things did finish through
+
+ok to save time i will run this update later, like while im asleep and not waiting on doing the next step...so lets try and capture some images from a dlsr
+
+
+maybe the curved screen will make the images more like they were collected from a fisheye lens, it could add some realism?
+
+...ok these packages are taking forever so I will now build the rover in KSP if I cant find something prebuilt I can use then takeoff and head to the Mun..
+
+well that was short lived, the updates got held up so no zmq until i do complete the system update. So I guess I have plenty of time to get to the mun. 

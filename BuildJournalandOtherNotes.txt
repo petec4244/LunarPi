@@ -1,9 +1,0 @@
-Notes
-
-Working on setting up the PiZero, decided to disable bluetooth, hciart and made it headless through the setup. Currently awaiting the Pi0 to perform it's update and upgrade...why did a choose one of the slowest pi's of all...
-
-Next the plan is to perform the temporary setup of the Canon EOS-6D, capture some images just to make sure that loop is all working..
-It occurs to me that my monitor being curved could become an issue and I might have to use a different one
-
-agghhh...0% [2 base-files 56.1 kB/71.1 kB 79%] [Waiting for headers] [1 raspi-firmware 312 kB/12.8 MB 2%]   5,287 B/s 16h 15min 6s   
-worse than that it seems stuck...it was but I was able to reboot the PI from the keyboard.
