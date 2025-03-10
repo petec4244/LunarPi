@@ -48,3 +48,5 @@ ok I took a break and thought about what im trying to accomplish here and decide
 set of training data, 1 good image of course isnt going to be enough so I've written some scripts that will capture images in a much quicker fashion
 i will control the rover myself and capture a bunch of images then train on that data so the final product will hopefully know what its looking at.
 
+ok I've captured 430 images as the rover progresses the surface of mun, reviewing some of the images I hope I dont need to retake them, some are fairly blurry
+I suspect this is a camera setting. I will begin training with this data tomorrow, it's almost 1 am and I need to call it a day.
