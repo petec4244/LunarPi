@@ -13,3 +13,7 @@ python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
 pip install pyzmq
 pip install Pillow
 pip install krpc
+
+
+#for breaking down the images for training
+pip install ultralytics 

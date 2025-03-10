@@ -50,3 +50,29 @@ i will control the rover myself and capture a bunch of images then train on that
 
 ok I've captured 430 images as the rover progresses the surface of mun, reviewing some of the images I hope I dont need to retake them, some are fairly blurry
 I suspect this is a camera setting. I will begin training with this data tomorrow, it's almost 1 am and I need to call it a day.
+
+Ok I've began processing all the 430 images, there are a number of steps that I need to take before I start using these images for training.
+I've split each of the 430 high res images into 512x512 size squares 88 per image. Now I am working on a sorting algorithm so I can trim down the 37,928 files into categories 
+this will be done based on light and dark weights, color content to detect the rover etc... it would take a long time to do by hand and find the good data so i'll do it in python
+it's over 6.4GB of image data. The images themselves are only 816mb. I will zip these before uploading to Github, and probably remove them later when they are no longer needed.
+good thing I have plenty of HD space :)
+
+ok first pass of sorting them by content a little resulted in:
+     17,000 images that contain empty soil (not even close)
+     6,000 images that contain horizon (closer but unlikely)
+     1,859 images that contain rocks or the rover (not even close)
+     12,000 images that contain space (not even close either)
+     26 images that contain the sun (close but i still expect a lot more)
+
+     So I will break these down further by hand...maybe it wont take too long...::fingers crossed::
+     adding categories for rover by itself and anomaly for in game things on the UI
+
+looks like some of the images have a black bar on the right side, so I'll make a script to remove those
+...after sorting for a bit, im gonna go back and try and resort with better accuracy... turns out it takes a while to go through 6 gigs of pictures even with a big monitor
+
+split and cluster worked a little better, but I'm still going to try some other methods of clustering.
+Turns out this is a pretty tough problem, there isnt much difference in the shadow of a rock and the darkness of space...
+so im gonna try some torch deep clustering now.
+
+
+
