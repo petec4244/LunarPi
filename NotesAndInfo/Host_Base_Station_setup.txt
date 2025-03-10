@@ -1,0 +1,15 @@
+#checked version = 3.12 for me`
+python --version
+
+#checked cuda version  = 12.6, think i've used this for something before...
+nvidia-smi
+
+#install pytorch
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+#check it works correctly = pass: 2.6.0+cu118 True
+python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
+
+pip install pyzmq
+pip install Pillow
+pip install krpc
