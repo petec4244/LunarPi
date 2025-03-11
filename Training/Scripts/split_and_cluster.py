@@ -6,8 +6,8 @@ from PIL import Image
 import shutil
 
 # Paths
-input_dir = "../images/rock_dataset_ingame_captures"  # Where 430 large images are
-output_dir = "../split_images_try2"
+input_dir = "../images/small_dataset"  
+output_dir = "../images/small_dataset_tiles"
 os.makedirs(output_dir, exist_ok=True)
 
 # Split function (skip if already split)
@@ -43,7 +43,7 @@ if not os.path.exists(output_dir) or len(os.listdir(output_dir)) < 37000:
                 cv2.imwrite(tile_filename, tile)
                 all_tiles.append(extract_features(tile))
                 tile_paths.append(tile_filename)
-        print(f"Processed {idx+1}/430 images")
+        print(f"Processed {idx+1} images")
 else:
     print("Using existing split images...")
     for filename in os.listdir(output_dir):
@@ -58,11 +58,11 @@ kmeans = KMeans(n_clusters=7, random_state=42)
 labels = kmeans.fit_predict(np.array(all_tiles))
 
 # Organize into folders
-class_dirs = {i: f"../split_images_try2/cluster_{i}" for i in range(7)}
+class_dirs = {i: f"../small_dataset_tiles/cluster_{i}" for i in range(7)}
 for d in class_dirs.values():
     os.makedirs(d, exist_ok=True)
 
 for label, tile_path in zip(labels, tile_paths):
     shutil.move(tile_path, os.path.join(class_dirs[label], os.path.basename(tile_path)))
 
-print("Clustering complete! Check ../split_images_try2/cluster_* folders.")
+print("Clustering complete! Check ../small_dataset_tiles/cluster_* folders.")

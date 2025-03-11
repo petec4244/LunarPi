@@ -24,8 +24,8 @@ def split_image(image_path, output_folder, chunk_size=(512, 512)):
     print(f"{basename}: {count} chunks created.")
 
 # Usage
-input_folder = "images//rock_dataset_ingame_captures"
-output_folder = "output_chunks"
+input_folder = "../images/small_dataset"
+output_folder = "../images/small_data_png"
 chunk_size = (512, 512)
 
 for filename in os.listdir(input_folder):
