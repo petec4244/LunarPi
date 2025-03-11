@@ -7,4 +7,4 @@ This process I will display capturing initial images, splitting them into small 
 
 I have already proven that this technique will work with my initial training data, and plan on refining that data for further improvements before I create the navigation piece and attempt to run the full test. 
 
-<img src="[https://github.com/petec4244/LunarPi/main/photos/first_detectionTest.jpg](https://github.com/petec4244/LunarPi/blob/main/photos/first_detectionTest.jpg)" alt="First Working Detections" width="50%" height="50%">
+<img src="photos/first_detectionTest.jpg" alt="First Working Detections" width="50%" height="50%">
