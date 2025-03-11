@@ -150,3 +150,79 @@ It took a few minutes and I now realize i need to move to multi threading before
 So I have a new version of the duplicate and vari brightness script that uses multiprocessing pools
 
 NOTE: next time add timestamping. 
+
+$ python brightness_varations_parallel.py
+Using 32 CPU cores
+Processing anomaly...
+Generated brightness variations for 35280 images in anomaly
+Processing close_rocks...
+Generated brightness variations for 282240 images in close_rocks
+Processing distant_rocks...
+Generated brightness variations for 86688 images in distant_rocks
+Processing empty_terrain...
+Generated brightness variations for 656208 images in empty_terrain
+Processing horizon...
+Generated brightness variations for 65520 images in horizon
+Processing night...
+Generated brightness variations for 480816 images in night
+Processing rock...
+Generated brightness variations for 303408 images in rock
+Processing rover...
+Generated brightness variations for 42336 images in rover
+Processing space...
+Generated brightness variations for 66528 images in space
+Processing sun...
+Generated brightness variations for 34272 images in sun
+Brightness variations complete! Total images: ~1,760,000
+
+2.05 Million images 213GB... I might take this back one step and only do the 5 degree rotation...instead I'll just train on a subsample for now and run the full training overnight.
+
+$ python subsample_for_test_data.py
+Total images: 2053296
+anomaly: 1374 train, 344 test
+close_rocks: 10996 train, 2749 test
+distant_rocks: 3376 train, 845 test
+empty_terrain: 25566 train, 6392 test
+horizon: 2552 train, 638 test
+night: 18732 train, 4684 test
+rock: 11820 train, 2956 test
+rover: 1648 train, 413 test
+space: 2592 train, 648 test
+sun: 1335 train, 334 test
+Subsampled to ~100000 images!
+
+now the training can begin!
+
+Something magical about that GPU fan spinning up as it reaches 100% utilization. Only using 5GB of it's 40
+INCREDIBLE!
+$ python train_and_save.py
+Epoch 1/5
+train Loss: 0.2782 Acc: 0.9098
+test Loss: 0.0294 Acc: 0.9951
+Epoch 2/5
+train Loss: 0.0242 Acc: 0.9956
+test Loss: 0.0053 Acc: 0.9993
+Epoch 3/5
+train Loss: 0.0095 Acc: 0.9984
+test Loss: 0.0025 Acc: 0.9995
+Epoch 4/5
+train Loss: 0.0051 Acc: 0.9993
+test Loss: 0.0017 Acc: 0.9997
+Epoch 5/5
+train Loss: 0.0037 Acc: 0.9994
+test Loss: 0.0017 Acc: 0.9994
+Training complete in 8m 32s
+Model saved as rock_classifier.pth
+
+Amazing results! I must however remain skeptical until I run some test stills back through and see using bounding boxes if its working.
+
+Im at a crossroad now, there are some errors in the detection boxes, but overall they are kind of correct, 
+I could use some logic in how the detections are processed, or just remove the close/near/far rocks and just call them all rocks. 
+Will have to do some tinkering...
+    once I figure this out I think the control portion will be very very easy in comparison.
+
+Estimated time in so far is probably about 15-18 hours, most on sunday 
+    If i dont count coming through the first 40k images before figuring out how to reduce them and still get good data maybe 12 hours.
+
+
+

@@ -1,4 +1,4 @@
 Training/images/*
 Training/output_chunks/*
-Training/categorized_chunks/*
-Training/split_images_try2/*
+Training/train/*
+Training/test/*

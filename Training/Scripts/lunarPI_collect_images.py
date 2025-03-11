@@ -6,7 +6,7 @@ import pickle
 # ZMQ setup
 context = zmq.Context()
 socket = context.socket(zmq.REQ)
-socket.connect("tcp://<PC_IP>:5555")  # Replace with your PC’s IP (e.g., 192.168.1.100)
+socket.connect("tcp://<PC_IP>:5555")  
 
 # Canon EOS 6D setup
 camera = gp.Camera()
