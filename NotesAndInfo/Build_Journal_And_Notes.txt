@@ -224,5 +224,22 @@ Will have to do some tinkering...
 Estimated time in so far is probably about 15-18 hours, most on sunday 
     If i dont count coming through the first 40k images before figuring out how to reduce them and still get good data maybe 12 hours.
 
+Ok after I ran through severl versions of detect and display found filter boxes, and tweaked setting to get some fairly decent results
+I decided it would probably be worthwile to create a "full" dataset using the 2million image variations that I produced previously
+I can let this run overnight and then try the results using this training data in the morning ideally I will get better results.
+Not that the results i've gotten so far arent impressive and great display of this technology more data is most always better so lets see what happens.
+I can always not use this one later. I still have my most recent training set anyway. might as well put those cpu/gpu cycles to good use.
 
 
+$ python split_full_dataset.py
+anomaly: 28224 train, 7056 test
+empty_terrain: 524966 train, 131242 test
+horizon: 52416 train, 13104 test
+night: 384652 train, 96164 test
+rock_combined: 537868 train, 134468 test
+rover: 33868 train, 8468 test
+space: 53222 train, 13306 test
+sun: 27417 train, 6855 test
+Dataset split complete!
+
+performing overnight training
