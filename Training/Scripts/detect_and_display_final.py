@@ -8,12 +8,13 @@ import os
 from collections import defaultdict
 
 # Paths and settings
-model_path = r"P:\petes_code\github\LunarPi\Training\scripts\rock_classifier_8class.pth"
-image_path = r"P:\petes_code\github\LunarPi\Training\images\rock_dataset\rock_0007.jpg"
+#model_path = r"P:\petes_code\github\LunarPi\Training\scripts\rock_classifier_8class.pth"
+model_path = r"P:\petes_code\github\LunarPi\Training\scripts\rock_classifier_full.pth"  # Updated model
+image_path = r"P:\petes_code\github\LunarPi\Training\images\rock_dataset\rock_0057.jpg"
 output_image_path = r"P:\petes_code\github\LunarPi\Training\detected_output_navigation.jpg"
 tile_sizes = [(684, 332), (332, 332)]  # Large for rover/context, small for rocks
-strides = [342, 83]  # Balanced stride
-confidence_thresholds = [0.4, 0.7]  # Lower for terrain, higher for rocks
+strides = [342, 83]  # Balanced stride , was 83, dropping to 41
+confidence_thresholds = [0.3, 0.98]  # Lower for terrain, higher for rocks
 
 # Load trained model
 model = models.resnet18(weights=None)
@@ -118,9 +119,9 @@ def process_image(image_path):
         cv2.putText(img, text, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
 
     cv2.imwrite(output_image_path, img)
-    cv2.imshow("Detections", img)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    # cv2.imshow("Detections", img)
+    # cv2.waitKey(0)
+    # cv2.destroyAllWindows()
 
 if __name__ == "__main__":
     process_image(image_path)

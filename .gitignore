@@ -4,3 +4,4 @@ Training/train/*
 Training/test/*
 Training/reduced_test/*
 Training/reduced_train/*
+Training/detected_output/*
