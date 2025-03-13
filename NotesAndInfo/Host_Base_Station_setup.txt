@@ -17,3 +17,7 @@ pip install krpc
 
 #for breaking down the images for training
 pip install ultralytics 
+
+#install Golang
+Get the Go installer from golang.org/dl/ 
+

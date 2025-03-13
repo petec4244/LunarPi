@@ -290,3 +290,9 @@ This is the next step that serves two functions, control and next proof of conce
 
 next I've decided for the automated controller I want to use the programming language GO, I havent made a GO application before but I hear good things and since it helps fulfil job requirment
     and also I believe it is uniquely tailored to state machines this seems like a great time to go forward with a GO app. I'm not sure what it takes to build go but I will find out in the next few hours...
+
+
+I have the python TUI and the RoverControl application coded up now, making some tweaks to address in game behavior (drifting, not brakeing long enough etc...)
+Should be able to finalize all this fairly soon, I will also need to fully create a streamer for the realtime application so some of these things are done all the time and not just in instance.
+I am right on track with finising by the end of the week. :)
+

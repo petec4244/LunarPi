@@ -26,3 +26,21 @@ python3 -c "import PIL; print(PIL.__version__)"
 
 
 #dont forget to update the LunarPiRover with your correct "Base Station IP address"
+
+#installing krpc for cpp on RPI
+sudo apt-get install libasio-dev
+
+wget https://github.com/krpc/krpc/releases/download/v0.5.4/krpc-cpp-0.5.4.zip
+unzip
+
+./configure
+make 
+sudo make install
+sudo ldconfig
+
+or 
+sudo apt-get install cmake
+mkdir build && cd build
+cmake ..
+make
+sudo make install
