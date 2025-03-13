@@ -285,3 +285,8 @@ After doing some critical thinking I've decided the best course of action is to 
 So I will make a command line driven rover controller, where command args will perform functions, eg. ./rovercontrol -execute turn 30 -speed 10  
 This is the next step that serves two functions, control and next proof of concept. Afterward I can then create a logic engine based on the image detector
     I can call this controller using system calls, it just needs to fire off the command over tcp to the BaseStation pc to perform the commands, I dont think there is any required ack, but I could be wrong
+    Ok I have te rover controller next I have decided to make a python Control Caller app, I have a first version of this app but ..,
+    I want to implement a command line menu so I can do several things to test out functionality
+
+next I've decided for the automated controller I want to use the programming language GO, I havent made a GO application before but I hear good things and since it helps fulfil job requirment
+    and also I believe it is uniquely tailored to state machines this seems like a great time to go forward with a GO app. I'm not sure what it takes to build go but I will find out in the next few hours...

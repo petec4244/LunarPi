@@ -157,7 +157,7 @@ int main(int argc, char *argv[]) {
     // Connect to kRPC server
     krpc::Client conn;
     try {
-        conn = krpc::connect("127.0.0.1", 50000);
+        conn = krpc::connect("192.168.1.11", 50000);
         std::cout << "Connected to kRPC server\n";
     } catch (const std::exception &e) {
         std::cerr << "Failed to connect to kRPC server: " << e.what() << "\n";
