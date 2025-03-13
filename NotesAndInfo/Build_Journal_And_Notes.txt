@@ -243,3 +243,45 @@ sun: 27417 train, 6855 test
 Dataset split complete!
 
 performing overnight training
+$ python train_rock_classifier_full_dataset.py
+Classes: ['anomaly', 'empty_terrain', 'horizon', 'night', 'rock_combined', 'rover', 'space', 'sun'], Train: 1642633, Test: 410663
+Epoch 1/10
+train Loss: 0.0108 Acc: 0.9964
+test Loss: 0.0007 Acc: 0.9995
+Epoch 2/10
+train Loss: 0.0009 Acc: 0.9995
+test Loss: 0.0008 Acc: 0.9995
+Epoch 3/10
+train Loss: 0.0009 Acc: 0.9995
+test Loss: 0.0007 Acc: 0.9995
+Epoch 4/10
+train Loss: 0.0008 Acc: 0.9995
+test Loss: 0.0007 Acc: 0.9995
+Epoch 5/10
+train Loss: 0.0008 Acc: 0.9995
+test Loss: 0.0007 Acc: 0.9995
+Epoch 6/10
+train Loss: 0.0008 Acc: 0.9995
+test Loss: 0.0007 Acc: 0.9995
+Epoch 7/10
+train Loss: 0.0007 Acc: 0.9995
+test Loss: 0.0007 Acc: 0.9995
+Epoch 8/10
+train Loss: 0.0007 Acc: 0.9995
+test Loss: 0.0007 Acc: 0.9995
+Epoch 9/10
+train Loss: 0.0007 Acc: 0.9995
+test Loss: 0.0007 Acc: 0.9995
+Epoch 10/10
+train Loss: 0.0007 Acc: 0.9995
+test Loss: 0.0007 Acc: 0.9995
+Training complete in 466m 41s
+Model saved as rock_classifier_full.pth
+
+Ok after fighting GIT because I checked in a 2 gig training zip file 4 commit's ago. I realized I need to make some decisions on how to best proceed with the automation controls
+After doing some critical thinking I've decided the best course of action is to create a test controller that runs on the RPI, I will use c++ just to throw a subtle curve into the project 
+    especially since i'm trying to create some real world examples of solving problems since all my 14 years of other experience is all classifed or propritary 
+
+So I will make a command line driven rover controller, where command args will perform functions, eg. ./rovercontrol -execute turn 30 -speed 10  
+This is the next step that serves two functions, control and next proof of concept. Afterward I can then create a logic engine based on the image detector
+    I can call this controller using system calls, it just needs to fire off the command over tcp to the BaseStation pc to perform the commands, I dont think there is any required ack, but I could be wrong
